@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
@@ -95,6 +97,29 @@ public class TwitterItemListActivity extends AppCompatActivity implements IOnTwe
             Intent intent = new Intent(this, TwitterItemDetailActivity.class);
             intent.putExtra(TwitterItemDetailFragment.ARG_TWEET, tweetId);
             startActivity(intent);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.logout:
+                // Clear current session
+                TwitterCore.getInstance().getSessionManager().clearActiveSession();
+
+                // Launch login activity and close the current one
+                startActivity(new Intent(TwitterItemListActivity.this,
+                        LoginActivity.class));
+                TwitterItemListActivity.this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }
