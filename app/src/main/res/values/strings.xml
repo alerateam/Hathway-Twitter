@@ -3,4 +3,6 @@
     <string name="login_activity">Please login</string>
     <string name="title_twitteritem_detail">Tweet Details</string>
     <string name="failed_to_login_msg">Failed to login with Twitter</string>
+    <string name="details_title">Tweet details</string>
+    <string name="unknown_error">Unknown error</string>
 </resources>

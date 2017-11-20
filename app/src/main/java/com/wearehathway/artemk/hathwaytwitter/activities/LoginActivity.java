@@ -1,4 +1,4 @@
-package com.wearehathway.artemk.hathwaytwitter.activity;
+package com.wearehathway.artemk.hathwaytwitter.activities;
 
 import android.content.Intent;
 import android.os.Bundle;

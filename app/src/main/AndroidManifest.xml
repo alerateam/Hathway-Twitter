@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.LoginActivity"
+        <activity android:name=".activities.LoginActivity"
             android:label="@string/login_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,18 +21,18 @@
         </activity>
 
         <activity
-            android:name=".activity.TwitterItemListActivity"
+            android:name=".activities.TwitterItemListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".activity.TwitterItemDetailActivity"
+            android:name=".activities.TwitterItemDetailActivity"
             android:label="@string/title_twitteritem_detail"
-            android:parentActivityName=".activity.TwitterItemListActivity"
+            android:parentActivityName=".activities.TwitterItemListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.wearehathway.artemk.hathwaytwitter.activity.TwitterItemListActivity" />
+                android:value="com.wearehathway.artemk.hathwaytwitter.activities.TwitterItemListActivity" />
         </activity>
 
     </application>

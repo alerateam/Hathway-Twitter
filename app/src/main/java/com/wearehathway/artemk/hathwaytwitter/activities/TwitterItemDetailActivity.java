@@ -1,4 +1,4 @@
-package com.wearehathway.artemk.hathwaytwitter.activity;
+package com.wearehathway.artemk.hathwaytwitter.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.wearehathway.artemk.hathwaytwitter.R;
-import com.wearehathway.artemk.hathwaytwitter.fragment.TwitterItemDetailFragment;
+import com.wearehathway.artemk.hathwaytwitter.fragments.TwitterItemDetailFragment;
 
 /**
  * An activity representing a single TwitterItem detail screen. This
@@ -34,12 +34,12 @@ public class TwitterItemDetailActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
 
             Bundle arguments = new Bundle();
-            arguments.putString(TwitterItemDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(TwitterItemDetailFragment.ARG_ITEM_ID));
+            arguments.putLong(TwitterItemDetailFragment.ARG_TWEET,
+                    getIntent().getLongExtra(TwitterItemDetailFragment.ARG_TWEET, -1));
             TwitterItemDetailFragment fragment = new TwitterItemDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.twitteritem_detail_container, fragment)
+                    .replace(R.id.twitteritem_detail_container, fragment)
                     .commit();
         }
     }
